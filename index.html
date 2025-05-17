@@ -22,29 +22,35 @@
   <h1> Contact Us </h1>
 
   <label for="firstName"> First Name <span class="required"> * </span></label>
-  <input type="text" placeholder="First Name" required autocomplete="given-name" aria-required="true">
+  <input type="text" placeholder="First Name" id="firstName" required autocomplete="given-name" aria-required="true">
 
   <label for="lastName"> Last Name <span class="required"> * </span> </label>
-  <input type="text" placeholder="Last Name" required autocomplete="family-name" aria-required="true">
+  <input type="text" placeholder="Last Name" id="lastName" required autocomplete="family-name" aria-required="true">
+  
+  <br>
 
   <label for="email"> Email Address <span class="required"> * </span> </label>
-  <input type="email" placeholder="Email Address" required autocomplete="email" aria-required="true">
+  <input type="email" placeholder="Email Address" id="email" required autocomplete="email" aria-required="true">
 
-  <label for="queryType"> Query Type <span class="required"> * </span> </label>
+  <p id="queryType"> Query Type <span class="required"> * </span> </p>
+  <div class="radio-container">
   <input type="radio" id="gEnquiry" name="queryType" value="gralEnquiry">General Enquiry 
   <input type="radio" id="sRequest" name="queryType" value="supportRequest">Support Request 
+  </div>
 
   <label for="message"> Message <span class="required"> * </span> </label>
-  <textarea placeholder="Message" required></textarea>
+  <textarea placeholder="Message" id="message" required></textarea>
 
+  <br>
   <input type="checkbox" required><label> I consent to being contacted by the team <span class="required"> * </span> </label>
 
+  <br>
   <button type="submit" id="submit"> Submit </button>
   </form>
 
   <div class="success">
   <h2> Message Sent! </h2>
-  <p> Thanks for completing the form. We'll be in touch soon! </p>
+  <p id="successMessage"> Thanks for completing the form. We'll be in touch soon! </p>
   </div>
  </main>
 
