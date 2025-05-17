@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" type="text/css"  href="style.css">
+
+
   <title>Frontend Mentor | Contact form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,38 +17,50 @@
   </style>
 </head>
 <body>
+ <main>
+  <form class="main-container">
+  <h1> Contact Us </h1>
 
-  Contact Us
+  <label for="firstName"> First Name <span class="required"> * </span></label>
+  <input type="text" placeholder="First Name" required autocomplete="given-name" aria-required="true">
 
-  First Name
-  This field is required
+  <label for="lastName"> Last Name <span class="required"> * </span> </label>
+  <input type="text" placeholder="Last Name" required autocomplete="family-name" aria-required="true">
 
-  Last Name
-  This field is required
+  <label for="email"> Email Address <span class="required"> * </span> </label>
+  <input type="email" placeholder="Email Address" required autocomplete="email" aria-required="true">
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+  <label for="queryType"> Query Type <span class="required"> * </span> </label>
+  <input type="radio" id="gEnquiry" name="queryType" value="gralEnquiry">General Enquiry 
+  <input type="radio" id="sRequest" name="queryType" value="supportRequest">Support Request 
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+  <label for="message"> Message <span class="required"> * </span> </label>
+  <textarea placeholder="Message" required></textarea>
 
-  Message
-  This field is required
+  <input type="checkbox" required><label> I consent to being contacted by the team <span class="required"> * </span> </label>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+  <button type="submit" id="submit"> Submit </button>
+  </form>
 
-  Submit
+  <div class="success">
+  <h2> Message Sent! </h2>
+  <p> Thanks for completing the form. We'll be in touch soon! </p>
+  </div>
+ </main>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
+  <footer>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
     Coded by <a href="https://www.frontendmentor.io/profile/ktzazz">Katia Aragon</a>.
   </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
+<!--<fieldset>
+  <legend>Query Type</legend>
+  <input type="radio" id="gEnquiry" name="General Enquiry" value="gralEnquiry">
+  <label for="red">General Enquiry</label>
+  <input type="radio" id="sRequest" name="Support Request" value="supportRequest">
+  <label for="blue">Support Request</label>
+  </fieldset>-->
 </html>
