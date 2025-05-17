@@ -20,39 +20,49 @@
  <main>
   <form class="main-container">
   <h1> Contact Us </h1>
-
-  <label for="firstName"> First Name <span class="required"> * </span></label>
-  <input type="text" placeholder="First Name" id="firstName" required autocomplete="given-name" aria-required="true">
-
-  <label for="lastName"> Last Name <span class="required"> * </span> </label>
-  <input type="text" placeholder="Last Name" id="lastName" required autocomplete="family-name" aria-required="true">
+ <div class="names">   
   
+  <label for="firstName"> First Name <span class="required"> * </span></label>
   <br>
+  <input type="text" placeholder="First Name" id="firstName" required autocomplete="given-name" aria-required="true">
+  
+  
+  <label for="lastName"> Last Name <span class="required"> * </span> </label>
+  <br>
+  <input type="text" placeholder="Last Name" id="lastName" required autocomplete="family-name" aria-required="true">
+  </div>
 
   <label for="email"> Email Address <span class="required"> * </span> </label>
+  <br>
   <input type="email" placeholder="Email Address" id="email" required autocomplete="email" aria-required="true">
-
+   
   <p id="queryType"> Query Type <span class="required"> * </span> </p>
   <div class="radio-container">
-  <input type="radio" id="gEnquiry" name="queryType" value="gralEnquiry">General Enquiry 
-  <input type="radio" id="sRequest" name="queryType" value="supportRequest">Support Request 
+   <div class="radio">
+    <input type="radio" id="gEnquiry" name="queryType" value="gralEnquiry" aria-required="true" aria-checked="false">General Enquiry 
+   </div>
+   <div class="radio">
+    <input type="radio" id="sRequest" name="queryType" value="supportRequest" aria-required="true" aria-checked="false">Support Request 
+   </div>
   </div>
 
   <label for="message"> Message <span class="required"> * </span> </label>
-  <textarea placeholder="Message" id="message" required></textarea>
-
   <br>
+  <textarea placeholder="Message" id="message" required aria-required="true" aria-multiline="true"></textarea>
+
+  <div class="consent">
   <input type="checkbox" required><label> I consent to being contacted by the team <span class="required"> * </span> </label>
+  </div>
 
-  <br>
   <button type="submit" id="submit"> Submit </button>
   </form>
+  
+ </main>
 
-  <div class="success">
+ <div class="success">
   <h2> Message Sent! </h2>
   <p id="successMessage"> Thanks for completing the form. We'll be in touch soon! </p>
-  </div>
- </main>
+ </div>
 
   <footer>
   <div class="attribution">
