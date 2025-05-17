@@ -7,6 +7,9 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" type="text/css"  href="style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
   <title>Frontend Mentor | Contact form</title>
 
@@ -21,34 +24,53 @@
   <form class="main-container">
   <h1> Contact Us </h1>
  <div class="names">   
-  
+  <div id="fName">
   <label for="firstName"> First Name <span class="required"> * </span></label>
   <br>
-  <input type="text" placeholder="First Name" id="firstName" required autocomplete="given-name" aria-required="true">
-  
-  
+  <input type="text"  id="firstName" required autocomplete="given-name" aria-required="true">
+  </div>
+  <div id="lName">
   <label for="lastName"> Last Name <span class="required"> * </span> </label>
   <br>
-  <input type="text" placeholder="Last Name" id="lastName" required autocomplete="family-name" aria-required="true">
-  </div>
+  <input type="text"  id="lastName" required autocomplete="family-name" aria-required="true">
+ </div></div>
 
   <label for="email"> Email Address <span class="required"> * </span> </label>
   <br>
-  <input type="email" placeholder="Email Address" id="email" required autocomplete="email" aria-required="true">
-   
-  <p id="queryType"> Query Type <span class="required"> * </span> </p>
-  <div class="radio-container">
-   <div class="radio">
-    <input type="radio" id="gEnquiry" name="queryType" value="gralEnquiry" aria-required="true" aria-checked="false">General Enquiry 
-   </div>
-   <div class="radio">
-    <input type="radio" id="sRequest" name="queryType" value="supportRequest" aria-required="true" aria-checked="false">Support Request 
-   </div>
+  <input type="email"  id="email" required autocomplete="email" aria-required="true">
+
+
+ <p id="queryType"> Query Type <span class="required"> * </span> </p>
+<div class="radio-container">
+  <div class="radio-option">
+    <label class="radio-item">
+      <input type="radio" id="gEnquiry" name="queryType" value="gralEnquiry" class="radio-input" aria-required="true" aria-checked="false">
+      <span class="radio-custom">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+          <circle class="radio-selected" cx="12" cy="12" r="6" fill="currentColor" opacity="0" />
+        </svg>
+      </span>
+      General Enquiry
+    </label>
   </div>
+  <div class="radio-option">
+    <label class="radio-item">
+      <input type="radio" id="sRequest" name="queryType" value="supportRequest" class="radio-input" aria-required="true" aria-checked="false">
+      <span class="radio-custom">
+        <svg width="24" height="24" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none" />
+          <circle class="radio-selected" cx="12" cy="12" r="6" fill="currentColor" opacity="0" />
+        </svg>
+      </span>
+      Support Request
+    </label>
+  </div>
+</div>
 
   <label for="message"> Message <span class="required"> * </span> </label>
   <br>
-  <textarea placeholder="Message" id="message" required aria-required="true" aria-multiline="true"></textarea>
+  <textarea id="message" required aria-required="true" aria-multiline="true"></textarea>
 
   <div class="consent">
   <input type="checkbox" required><label> I consent to being contacted by the team <span class="required"> * </span> </label>

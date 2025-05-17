@@ -1,0 +1,143 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+--Green-lighter: hsl(148, 38%, 91%);
+--Green-medium: hsl(169, 82%, 27%);
+--Red: hsl(0, 66%, 54%);
+--White: hsl(0, 0%, 100%);
+--Grey-mid: hsl(186, 15%, 59%);
+--Grey-dark: hsl(187, 24%, 22%);
+--font-size: 16px;
+--font-family: 'Karla', sans-serif;
+--font-weight-regular: 400;
+--font-weight-bold: 700;
+--border-radius: 10px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--Green-lighter);
+    font-family: var(--font-family);
+}
+
+form{
+    width: 50rem;
+    max-width: 50rem;
+    background-color: var(--White);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+}
+
+h1{
+    color: var(--Grey-dark);
+    font-size: 2rem;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 1.5rem;
+}
+ 
+.names{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+input [type="text"], #firstName, #lastName{
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--Grey-mid);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-regular);
+    color: var(--Grey-dark);
+} 
+
+input [type="text"]:focus, #firstName:focus, #lastName:focus{
+    border-color: var(--Green-medium);
+    outline: none;
+}
+
+input [type="email"], #email{
+    width: 100%;
+    max-width: 100%;
+    padding: 0.85rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--Grey-mid);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight-regular);
+    color: var(--Grey-dark);
+    margin-block-end: 1.5rem;
+}
+
+input [type="email"]:focus, #email:focus{
+    border-color: var(--Green-medium);
+    outline: none;
+}
+
+.radio-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.radio-item {
+  display: inline-flex; /* to align svg and text */
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-option {
+  width: 100%;
+  max-width: 100%;
+  padding: 0.8em;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--Grey-mid);
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem; /* main circle size*/
+  height: 1.5rem; 
+  margin-right: 0.5rem; /* space between circle and text */
+}
+
+.radio-custom svg {
+  width: 100%;
+  height: 100%;
+  color: var(--Grey-mid); /* base circle color */
+}
+
+/* when radio input is checked */
+.radio-input:checked + .radio-custom svg {
+  color: var(--Green-medium);
+}
+
+.radio-input:checked + .radio-custom svg .radio-selected {
+  opacity: 1; /* shows the inner circle */
+  fill: var(--Green-medium); /* inner circle color */
+}
+
+.radio-option:focus , .radio-input:focus {
+  border-color: var(--Green-medium);
+  outline: none;
+}
