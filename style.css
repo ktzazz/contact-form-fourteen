@@ -61,11 +61,13 @@ input [type="text"], #firstName, #lastName{
     font-size: var(--font-size);
     font-weight: var(--font-weight-regular);
     color: var(--Grey-dark);
+    margin-block-start: 1rem;
 } 
 
 input [type="text"]:focus, #firstName:focus, #lastName:focus{
     border-color: var(--Green-medium);
     outline: none;
+    box-shadow: 0 0 2px var(--Green-medium);
 }
 
 input [type="email"], #email{
@@ -77,18 +79,21 @@ input [type="email"], #email{
     font-size: var(--font-size);
     font-weight: var(--font-weight-regular);
     color: var(--Grey-dark);
+    margin-block-start: 1rem;
     margin-block-end: 1.5rem;
 }
 
 input [type="email"]:focus, #email:focus{
     border-color: var(--Green-medium);
     outline: none;
+    box-shadow: 0 0 2px var(--Green-medium);
 }
 
 .radio-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
+  margin: 1rem 0;
 }
 
 .radio-item {
@@ -137,7 +142,8 @@ input [type="email"]:focus, #email:focus{
   fill: var(--Green-medium); /* inner circle color */
 }
 
-.radio-option:focus , .radio-input:focus {
+.radio-option:focus {
   border-color: var(--Green-medium);
   outline: none;
+  box-shadow: 0 0 2px var(--Green-medium);
 }
