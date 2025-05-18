@@ -73,8 +73,17 @@
   <textarea id="message" required aria-required="true" aria-multiline="true"></textarea>
 
   <div class="consent">
-  <input type="checkbox" required><label> I consent to being contacted by the team <span class="required"> * </span> </label>
-  </div>
+  <label class="checkbox-container">
+    <input type="checkbox" required class="checkbox-input">
+    <span class="checkbox-custom">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <rect x="2" y="2" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" />
+        <path class="checkbox-selected" d="M6 12 L10 16 L18 8" stroke-width="2" stroke="currentColor" fill="none" opacity="0" />
+      </svg>
+    </span>
+    I consent to being contacted by the team <span class="required"> * </span>
+  </label>
+</div>
 
   <button type="submit" id="submit"> Submit </button>
   </form>
@@ -94,11 +103,5 @@
   </footer>
   <script src="script.js"></script>
 </body>
-<!--<fieldset>
-  <legend>Query Type</legend>
-  <input type="radio" id="gEnquiry" name="General Enquiry" value="gralEnquiry">
-  <label for="red">General Enquiry</label>
-  <input type="radio" id="sRequest" name="Support Request" value="supportRequest">
-  <label for="blue">Support Request</label>
-  </fieldset>-->
+
 </html>
