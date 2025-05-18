@@ -28,16 +28,20 @@
   <label for="firstName"> First Name <span class="required"> * </span></label>
   <br>
   <input type="text"  id="firstName" required autocomplete="given-name" aria-required="true">
+<span class="error">This field is required</span>
   </div>
+
   <div id="lName">
   <label for="lastName"> Last Name <span class="required"> * </span> </label>
   <br>
   <input type="text"  id="lastName" required autocomplete="family-name" aria-required="true">
- </div></div>
+<span class="error">This field is required</span> 
+  </div></div>
 
   <label for="email"> Email Address <span class="required"> * </span> </label>
   <br>
   <input type="email"  id="email" required autocomplete="email" aria-required="true">
+  <span class="error">Please enter a valid email address</span>
 
 
  <p id="queryType"> Query Type <span class="required"> * </span> </p>
@@ -67,10 +71,14 @@
     </label>
   </div>
 </div>
+<span class="error">Please select a query type</span>
 
-  <label for="message"> Message <span class="required"> * </span> </label>
+<br>
+  <label for="message" id="messageLabel"> Message <span class="required"> * </span> </label>
   <br>
   <textarea id="message" required aria-required="true" aria-multiline="true"></textarea>
+  <span class="error">This field is required</span>
+
 
   <div class="consent">
   <label class="checkbox-container">
@@ -84,6 +92,7 @@
     I consent to being contacted by the team <span class="required"> * </span>
   </label>
 </div>
+<span class="error">To submit this form, you must consent to be contacted</span>
 
   <button type="submit" id="submit"> Submit </button>
   </form>

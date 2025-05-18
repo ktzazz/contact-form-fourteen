@@ -84,7 +84,6 @@ input [type="email"], #email{
     font-weight: var(--font-weight-regular);
     color: var(--Grey-dark);
     margin-block-start: 1rem;
-    margin-block-end: 1.5rem;
 }
 
 input [type="email"]:focus, #email:focus{
@@ -108,7 +107,6 @@ textarea {
     font-weight: var(--font-weight-regular);
     color: var(--Grey-dark);
     margin-block-start: 1rem;
-    margin-block-end: 1.5rem;
     resize: none;
 }
 
@@ -122,13 +120,22 @@ textarea:hover{
     border-color: var(--Green-medium);
 }
 
+#messageLabel{
+  display: inline-block;
+    margin-block-start: 1.7rem;
+}
+
 /* query type */
+
+#queryType{
+  margin-block-start: 1.5rem;
+}
 
 .radio-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  margin: 1rem 0 2rem 0;
+  margin-block-start: 1rem;
 }
 
 .radio-item {
@@ -203,6 +210,7 @@ textarea:hover{
   display: inline-flex;
   align-items: center;
   cursor: pointer;
+  margin-top: 3rem;
 }
 
 .checkbox-input {
@@ -260,7 +268,7 @@ button{
     font-weight: var(--font-weight-regular);
     letter-spacing: 1.4px;
     cursor: pointer;
-    margin-block-start: 1.7rem;
+    margin-block-start: 2.3rem;
 }
 
 button:hover{
@@ -276,5 +284,18 @@ button:focus{
     color: var(--Green-medium);
     font-weight: var(--font-weight-bold);
     margin-inline-start: 0.2rem;;
+}
+
+.error{
+  color: var(--Red);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size);
+  display: inline-block; /*because span is an inline element so with inline-block we can add margin*/
+  margin-block-start: 0.7rem;
+  display: none;
+}
+
+.error-border{
+  border-color: var(--Red) !important;
 }
 
