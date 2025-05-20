@@ -1,145 +1,94 @@
-
-// makes clickeable the div with the class "radio-option" so it can mark the radio button as checked, even if the user doesn't click on the radio button 
-const radioOptions = document.querySelectorAll('.radio-option');
-
-  radioOptions.forEach(option => {
-    option.addEventListener('click', function() {
-      const radioInput = this.querySelector('.radio-input');
-      if (radioInput) {
-        radioInput.checked = true;
-        radioInput.dispatchEvent(new Event('change')); // 
-      }
-    });
-  });
-
-// adds the style to the box when the radio button is checked
-const radioInputs = document.querySelectorAll('.radio-input'); 
-
- radioInputs.forEach(input => {
-    input.addEventListener('change', function() {
-      // the event change is fired when the input is checked or unchecked
-      radioInputs.forEach(otherInput => {
-        otherInput.closest('.radio-option').classList.remove('selected');
-      }); //the method closest() returns the closest ancestor element that matches the specified selector ".radio-option" 
-          // and removes the "selected" class from all radio options that are not currently selected
-      if (this.checked) { //adds the "selected" class to the currently selected radio option and now the css can be applied
-        this.closest('.radio-option').classList.add('selected');
-      }
-    });
-  });
-
-
-  const formulario = document.querySelector('.main-container'); // Selecciona el formulario por su clase
-  const nameInput = document.getElementById('firstName'); // Selecciona los inputs por su ID
+document.addEventListener('DOMContentLoaded', function() {
+  const formulario = document.querySelector('.main-container');
+  // Asegúrate de que todos tus inputs y elementos relacionados estén seleccionados aquí dentro:
+  const nameInput = document.getElementById('firstName');
   const lastNameInput = document.getElementById('lastName');
   const emailInput = document.getElementById('email');
   const messageInput = document.getElementById('message');
   const queryTypeRadios = document.querySelectorAll('input[name="queryType"]');
   const consentCheckbox = document.querySelector('.consent input[type="checkbox"]');
-  
 
-formulario.addEventListener('submit', function(event) {
-    let hasErrors = false;
-    // Función para añadir la clase de error a un elemento
-    function addErrorClass(element) {
-      hasErrors = true;
-      console.log('adios');
-      element.classList.add('error');
-      element.classList.add('error-border');
-    }
-
-     addErrorClass(nameInput);
+  // Lógica para los radio buttons (código que ya tienes)
+  const radioOptions = document.querySelectorAll('.radio-option');
+  radioOptions.forEach(option => {
+    option.addEventListener('click', function() {
+      const radioInput = this.querySelector('.radio-input');
+      if (radioInput) {
+        radioInput.checked = true;
+        radioInput.dispatchEvent(new Event('change'));
+      }
+    });
   });
 
-    // Función para remover la clase de error a un elemento
-//    function removeErrorClass(element) {
-//    element.classList.remove('error-border');
-//    element.classList.remove('error');
-    
+  const radioInputs = document.querySelectorAll('.radio-input');
+  radioInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      radioInputs.forEach(otherInput => {
+        otherInput.closest('.radio-option').classList.remove('selected');
+      });
+      if (this.checked) {
+        this.closest('.radio-option').classList.add('selected');
+      }
+    });
+  });
 
-    // Limpiar las clases de error previas
-//    removeErrorClass(nameInput);
-//    removeErrorClass(lastNameInput);
-//    removeErrorClass(emailInput);
-//    removeErrorClass(messageInput);
+  // Listener principal del formulario
+  if (formulario) { // Aunque ya sabemos que se encuentra, es buena práctica mantener la verificación
+    formulario.addEventListener('submit', function(event) {
+      let hasErrors = false;
+      console.log('¡Evento submit disparado - Lógica de validación activa!'); // Mensaje de confirmación
 
-    // Validar First Name
-//    if (!nameInput.value.trim()) {
-      
-//      addErrorClass(nameInput);
-//      const nameErrorSpan = document.querySelector('#fName .error');
-//      if (nameErrorSpan) {
-//        nameErrorSpan.style.display = 'block';
-//      }
-//      hasErrors = true;
-//    } else {
-      
-//      nameInput.classList.remove('error-border');
-//      const nameErrorSpan = document.querySelector('#fName .error');
-//      if (nameErrorSpan) {
-//        nameErrorSpan.style.display = 'none';
-//      }
-//    }
+      // Función para añadir la clase de error a un elemento
+      function addErrorClass(element) {
+        hasErrors = true; // Asegurarse de marcar que hay errores
+        
+        element.classList.add('error-border');
+        console.log('Clases de error añadidas a:', element.id || element.className); // Para depuración
+      }
 
-    // Validar Last Name
-//    if (!lastNameInput.value.trim()) {
-//      addErrorClass(lastNameInput);
-//      hasErrors = true;
-//    }
+      // Función para remover la clase de error a un elemento
+      function removeErrorClass(element) {
+        element.classList.remove('error-border');
+        element.classList.remove('error');
+      }
 
-    // Validar Email
-//    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//    if (!emailInput.value.trim() || !emailRegex.test(emailInput.value)) {
-//      addErrorClass(emailInput);
-//      hasErrors = true;
-//    }
+      // --- Limpiar clases de error previas para todos los campos ---
+      removeErrorClass(nameInput);
+      removeErrorClass(lastNameInput);
+      removeErrorClass(emailInput);
+      removeErrorClass(messageInput);
+      // Aquí también puedes limpiar los mensajes de error existentes
+      document.querySelectorAll('.error').forEach(span => span.style.display = 'none');
+      // Asegúrate de limpiar también los estados de error de radio buttons y checkbox si aplicas clases a sus contenedores
+     // document.querySelectorAll('.error').forEach(el => el.classList.remove('error')); // Quita la clase 'error' de cualquier elemento que la tenga.
 
-    // Validar Query Type (al menos uno debe estar seleccionado)
-//    let queryTypeSelected = false;
-//    queryTypeRadios.forEach(radio => {
-//      if (radio.checked) {
-//        queryTypeSelected = true;
-//      }
-//    });
-//    if (!queryTypeSelected) {
-      // Puedes seleccionar el div contenedor o algún elemento relacionado para mostrar el error visual
-//      const queryTypeContainer = document.querySelector('#queryType');
-//      if (queryTypeContainer) {
-//        addErrorClass(queryTypeContainer); // O podrías añadir una clase específica para el error de radio
-//      }
-//      hasErrors = true;
-//    } else {
-//      const queryTypeContainer = document.querySelector('#queryType');
-//      if (queryTypeContainer && queryTypeContainer.classList.contains('error' || 'error-border')) {
-//        removeErrorClass(queryTypeContainer);
-//      }
-//    }
+      // --- Validaciones ---
 
-    // Validar Message
-//    if (!messageInput.value.trim()) {
-//      addErrorClass(messageInput);
-//      hasErrors = true;
-//    }
+      // Validar First Name
+      if (!nameInput.value.trim()) {
+        addErrorClass(nameInput);
+        const nameErrorSpan = document.querySelector('#fName .error'); // Asegúrate de usar la clase correcta para tu span de mensaje
+        if (nameErrorSpan) {
+          nameErrorSpan.style.display = 'block';
+        }
+      }
 
-    // Validar Consent (checkbox)
-//    if (!consentCheckbox.checked) {
-//      const consentContainer = document.querySelector('.consent');
-//      if (consentContainer) {
-//        addErrorClass(consentContainer); // O podrías añadir una clase específica
-//      }
-//      hasErrors = true;
-//    } else {
-//      const consentContainer = document.querySelector('.consent');
-//      if (consentContainer && consentContainer.classList.contains('error-border')) {
-//        removeErrorClass(consentContainer);
-//      }
-//    }
+      // ... (Aquí irán las validaciones para Last Name, Email, Query Type, Message, Consent) ...
+      // Asegúrate de que cada validación llame a addErrorClass(el_input) y muestre su span de error
 
-//    if (hasErrors) {
-//      event.preventDefault(); // Evita que se envíe el formulario si hay errores
-//    } else {
-//      event.preventDefault();
-      //formulario.submit(); // Permite el envío si no hay errores
+      // --- Control de envío del formulario ---
+      if (hasErrors) {
+        event.preventDefault(); // Evita que se envíe el formulario si hay errores
+        console.log('Errores detectados. Formulario NO enviado.');
+      } else {
+        //const successMessage = document.querySelector('.success');
+        console.log('Formulario sin errores. Enviando...');
+        // formulario.submit()
+      }
+    });
+  } else {
+    console.log('Error: No se encontró el formulario con la clase .main-container.');
+  }
+});
 
-//    }
-     
+console.log('Script ejecutándose desde el inicio.');
