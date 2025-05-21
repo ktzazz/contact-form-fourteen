@@ -75,7 +75,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // ... (Aquí irán las validaciones para Last Name, Email, Query Type, Message, Consent) ...
       // Asegúrate de que cada validación llame a addErrorClass(el_input) y muestre su span de error
+      // validate last name
+      if (!lastNameInput.value.trim()) {
+        addErrorClass(lastNameInput);
+        const nameErrorSpan = document.querySelector('#lName .error'); 
+        if (nameErrorSpan) {
+          nameErrorSpan.style.display = 'block';
+        }
+      }
 
+      // validate email
+      if (!emailInput.value.trim()) {
+        addErrorClass(emailInput);
+        const nameErrorSpan = document.querySelector('#email .error'); 
+        if (nameErrorSpan) {
+          nameErrorSpan.style.display = 'block';
+        }
+      }
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       // --- Control de envío del formulario ---
       if (hasErrors) {
         event.preventDefault(); // Evita que se envíe el formulario si hay errores
