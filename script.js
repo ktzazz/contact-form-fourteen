@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
   const formulario = document.querySelector('.main-container');
-  // Asegúrate de que todos tus inputs y elementos relacionados estén seleccionados aquí dentro:
   const nameInput = document.getElementById('firstName');
   const lastNameInput = document.getElementById('lastName');
   const emailInput = document.getElementById('email');
@@ -38,8 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (formulario) { //verify if the form exists
     formulario.addEventListener('submit', function(event) {
       let hasErrors = false;
-      console.log('¡Evento submit disparado - Lógica de validación activa!'); // Mensaje de confirmación
-
       // function to add error-border class to an element not the .error(text) because the .error(text) is a span and it did some weird things when adding both at the same time
       function addErrorClass(element) {
         hasErrors = true; // to set errors to true
