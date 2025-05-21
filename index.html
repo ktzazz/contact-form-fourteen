@@ -38,12 +38,14 @@
 <span class="error">This field is required</span> 
   </div></div>
 
+  <div id="mail">
   <label for="email"> Email Address <span class="required"> * </span> </label>
   <br>
   <input type="email"  id="email"  autocomplete="email" aria-required="true">
   <span class="error">Please enter a valid email address</span>
+  </div>
 
-
+<div id="qType">  
  <p id="queryType"> Query Type <span class="required"> * </span> </p>
 <div class="radio-container">
   <div class="radio-option" tabindex="0">
@@ -72,14 +74,18 @@
   </div>
 </div>
 <span class="error">Please select a query type</span>
+</div>
+
 
 <br>
+<div id="msg">
   <label for="message" id="messageLabel"> Message <span class="required"> * </span> </label>
   <br>
   <textarea id="message"  aria-required="true" aria-multiline="true"></textarea>
   <span class="error">This field is required</span>
+</div>
 
-
+<div id="cons">
   <div class="consent">
   <label class="checkbox-container">
     <input type="checkbox"  class="checkbox-input">
@@ -93,6 +99,7 @@
   </label>
 </div>
 <span class="error">To submit this form, you must consent to be contacted</span>
+</div>
 
   <button type="submit" id="submit"> Submit </button>
   </form>
