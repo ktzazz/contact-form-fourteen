@@ -129,14 +129,25 @@ document.addEventListener('DOMContentLoaded', function() {
       // send form or not 
       if (hasErrors) {
         event.preventDefault(); // Evita que se envíe el formulario si hay errores
-        console.log('Errores detectados. Formulario NO enviado.');
       } else {
-        //const successMessage = document.querySelector('.success');
-        console.log('Formulario sin errores. Enviando...');
-       formulario.submit()
-      }
+        const successMessage = document.querySelector('.success');
+        event.preventDefault();
+        formulario.reset();
+         
+        // to remove the error styles to every input just in case
+        removeErrorClass(nameInput);
+        removeErrorClass(lastNameInput);
+        removeErrorClass(emailInput);
+        removeErrorClass(messageInput);
+        document.querySelectorAll('.error').forEach(span => span.style.display = 'none');
+        document.querySelector('.radio-option').classList.remove('selected');
+        console.log('sending form...');
+        if (successMessage) {
+        successMessage.style.display = 'block';       
+        console.log('SENT FORM!');
+      }}
     });
   } else {
-    console.log('Error: No se encontró el formulario con la clase .main-container.');
+    console.log('NO FORM FOUND ON .main-container.');
   }
 });
