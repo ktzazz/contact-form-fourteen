@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // validate consent
       if (!consentCheckbox.checked) {
+        hasErrors = true;
         const nameErrorSpan = document.querySelector('#cons .error'); 
         if (nameErrorSpan) {
           nameErrorSpan.style.display = 'block';
@@ -131,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Evita que se envíe el formulario si hay errores
       } else {
         const successMessage = document.querySelector('.success');
+        const pop = document.querySelector('.pop');
         event.preventDefault();
         formulario.reset();
          
@@ -143,8 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.radio-option').classList.remove('selected');
         console.log('sending form...');
         if (successMessage) {
-          successMessage.style.display = 'block'; 
-          successMessage.classList.add('active');
+          successMessage.style.display = 'grid'; 
+          pop.classList.add('active');
 
         console.log('SENT FORM!');
       }}

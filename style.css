@@ -30,12 +30,17 @@ body{
     font-family: var(--font-family);
 }
 
+
+
 form{
-    width: 50rem;
-    max-width: 50rem;
+    width: 45rem;
+    max-width: 45rem;
     background-color: var(--White);
     border-radius: var(--border-radius);
     padding: 2.5rem;
+    margin-block-start: 7rem;
+    margin-block-end: 6rem;
+    position: static;
 }
 
 h1{
@@ -303,6 +308,12 @@ button:focus{
 }
 
 /*success message*/
+
+#sp{
+  position: absolute;
+  top: 1.5rem;
+}
+
 .success{
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -314,7 +325,6 @@ button:focus{
   padding: 1.3rem 1rem;
   width: 23rem;
   color: var(--White);
-  margin-block-start: 1.5rem;
 }
 
 .success span{
@@ -346,8 +356,7 @@ button:focus{
   display: none;
 }
 
-
-.success{
+.pop{
   max-height: 0;
   overflow: hidden;
   transition: all 0.6s ease;
@@ -355,8 +364,14 @@ button:focus{
 }
 
 
-.success.active{
+.pop.active{
   max-height: 200px;
   opacity: 1;
 }  
 
+
+footer{
+  position: relative;
+  bottom: 15px;
+  color: var(--Grey-mid);
+}
