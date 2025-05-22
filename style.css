@@ -306,30 +306,33 @@ button:focus{
 .success{
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-template-columns: 2rem 1fr;
-  background-color: #252525;
+  grid-template-columns: 3rem 1fr;
+  align-items: center;
+  justify-items: center;
+  background-color: var(--Grey-dark);
   border-radius: var(--border-radius);
-  padding: 1.55rem 1rem;
+  padding: 1.3rem 1rem;
   width: 23rem;
   color: var(--White);
+  margin-block-start: 1.5rem;
 }
 
 .success span{
   grid-area: 1 / 1 / 1 / 1;
-  display: inline-block;
+  display: block;
   background-image: url(assets/images/icon-success-check.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  width: 1rem;
-  height: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-inline-start: -0.82em;
 }
 
 .success h2{
   grid-area: 1 / 2 / 1 / 2;
-  display: inline-block;
   width: 12rem;
   font-size: var(--font-size);
-  text-align: left;
+  margin-inline-start: -7rem;
 }
 
 .success p{
@@ -339,7 +342,21 @@ button:focus{
   margin-block-start: 0.5rem;
 }
 
-.main-container{
+.success{
   display: none;
 }
+
+
+.success{
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  opacity: 0.8;
+}
+
+
+.success.active{
+  max-height: 200px;
+  opacity: 1;
+}  
 

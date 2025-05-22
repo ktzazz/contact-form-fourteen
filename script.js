@@ -143,7 +143,9 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.radio-option').classList.remove('selected');
         console.log('sending form...');
         if (successMessage) {
-        successMessage.style.display = 'block';       
+          successMessage.style.display = 'block'; 
+          successMessage.classList.add('active');
+
         console.log('SENT FORM!');
       }}
     });
