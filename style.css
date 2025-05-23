@@ -375,3 +375,64 @@ footer{
   bottom: 15px;
   color: var(--Grey-mid);
 }
+
+@media (max-width: 500px){
+
+    form{
+      width: 100%;
+      max-width: 21rem;
+      margin-block-start: 2rem;
+      padding-block-end: 1.5rem;
+      border-radius: 1.1rem;
+    }
+
+    h1{
+      margin-block-end: 2rem;
+      letter-spacing: -0.07rem;
+    }
+
+    .names{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    }
+    
+    .radio-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-block-start: 1rem;
+    }
+
+    #messageLabel{
+    margin-block-start: 0.5rem;
+    }
+
+    textarea{
+      height: 13rem;
+    }
+
+    .checkbox-custom{
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .checkbox-container{
+      margin-block-start: 2.5rem;
+      margin-block-end: 2.5rem;
+    }
+
+    button{
+      margin-block-start: 0rem;
+    }
+
+    .consent + .error {
+      margin-block-start: -1.5rem;
+      margin-block-end: 2.5rem;
+    }
+
+}
+
+
+
