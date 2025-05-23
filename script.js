@@ -88,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
         queryTypeErrorSpan.style.display = 'none';
         queryTypeErrorSpan.classList.remove('error'); 
     }
+    
+
 
     // validate query type
     let selectedQuery = false;
@@ -142,7 +144,10 @@ document.addEventListener('DOMContentLoaded', function() {
         removeErrorClass(emailInput);
         removeErrorClass(messageInput);
         document.querySelectorAll('.error').forEach(span => span.style.display = 'none');
-        document.querySelector('.radio-option').classList.remove('selected');
+        radioOptions.forEach(option => {
+        option.classList.remove('selected');
+        });
+
         console.log('sending form...');
         if (successMessage) {
           successMessage.style.display = 'grid'; 
