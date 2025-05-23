@@ -147,9 +147,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (successMessage) {
           successMessage.style.display = 'grid'; 
           pop.classList.add('active');
-
-        console.log('SENT FORM!');
-      }}
+          const vanished = document.querySelector('#sp');
+             if (window.innerWidth <= 500) {
+               console.log('se agregó el vanished');
+               setTimeout(() => {
+                 vanished.classList.add('disappear');
+               }, 5000);
+          }
+        } console.log('SENT FORM!');
+      }
     });
   } else {
     console.log('NO FORM FOUND ON .main-container.');
