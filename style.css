@@ -67,6 +67,8 @@ input [type="text"], #firstName, #lastName{
     font-weight: var(--font-weight-regular);
     color: var(--Grey-dark);
     margin-block-start: 1rem;
+    font-family: var(--font-family);
+
 } 
 
 input [type="text"]:focus, #firstName:focus, #lastName:focus{
@@ -89,6 +91,8 @@ input [type="email"], #email{
     font-weight: var(--font-weight-regular);
     color: var(--Grey-dark);
     margin-block-start: 1rem;
+    font-family: var(--font-family);
+
 }
 
 input [type="email"]:focus, #email:focus{
@@ -113,6 +117,8 @@ textarea {
     color: var(--Grey-dark);
     margin-block-start: 1rem;
     resize: none;
+    font-family: var(--font-family);
+
 }
 
 textarea:focus{
@@ -369,6 +375,9 @@ button:focus{
   opacity: 1;
 }  
 
+#sp-mobile{
+  display: none;
+}
 
 footer{
   position: relative;
@@ -430,6 +439,33 @@ footer{
     .consent + .error {
       margin-block-start: -1.5rem;
       margin-block-end: 2.5rem;
+    }
+
+    #sp-mobile{
+      display: block;
+      position: relative;
+      top: 0.7rem;
+    }
+
+    .success{
+      width: 22rem;
+    }
+
+    .success span{
+      margin-inline-start: 0rem;
+      justify-self: start;
+    }
+
+    .success p{
+      font-size: 16px;
+    }
+
+    .success h2{
+      font-size: 18px;
+    }
+
+    #sp{
+      display: none;
     }
 
 }
